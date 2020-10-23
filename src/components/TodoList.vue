@@ -1,5 +1,5 @@
 <template>
-  <div>{{ testing }}</div>
+  <p>{{ todo.id }}</p>
 </template>
 
 <script>
