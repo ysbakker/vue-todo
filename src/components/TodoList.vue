@@ -1,7 +1,7 @@
 <template>
   <div>
     <ul>
-      <Todo v-for="todo in todos" :key="todo.title" :item="todo" />
+      <Todo v-for="todo in todos" :key="todo.id" :item="todo" />
     </ul>
   </div>
 </template>
@@ -13,7 +13,11 @@ export default {
   components: {
     Todo,
   },
-  props: ['todos'],
+  computed: {
+    todos() {
+      return this.$store.state.todo.todos
+    },
+  },
 }
 </script>
 

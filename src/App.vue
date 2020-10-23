@@ -1,8 +1,8 @@
 <template>
   <div id="app">
     <h1>Epic TODO list application</h1>
-    <TodoList :todos="todos" />
-    <TodoControls @addTodo="addTodo" />
+    <TodoList />
+    <TodoControls />
   </div>
 </template>
 
@@ -16,24 +16,8 @@ export default {
     TodoList,
     TodoControls,
   },
-  data() {
-    return {
-      todos: [],
-    }
-  },
   async created() {
-    this.todos = await fetch(
-      'https://jsonplaceholder.typicode.com/todos'
-    ).then(res => res.json())
-
-    this.todos = this.todos.filter(
-      (todo, i) => i % Math.round(Math.random() * 100) === 0
-    )
-  },
-  methods: {
-    addTodo(todo) {
-      this.todos = todo ? this.todos : [...this.todos, todo]
-    },
+    this.$store.dispatch('populateTodos')
   },
 }
 </script>

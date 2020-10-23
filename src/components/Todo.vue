@@ -1,7 +1,7 @@
 <template>
   <li
     :class="{ completed: item.completed }"
-    @click="item.completed = !item.completed"
+    @click="$store.commit('toggleTodo', item.id)"
   >
     <input type="checkbox" :checked="item.completed" />
     <p>{{ item.title }}</p>

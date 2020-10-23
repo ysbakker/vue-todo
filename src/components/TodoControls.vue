@@ -16,7 +16,14 @@ export default {
   methods: {
     addTodo(event) {
       event.preventDefault()
-      this.$emit('addTodo', this.todo)
+      const todo = {
+        id: Math.random()
+          .toString(36)
+          .substr(2, 9),
+        title: this.todo,
+        completed: false,
+      }
+      this.$store.commit('addTodo', todo)
       this.todo = ''
     },
   },
