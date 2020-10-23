@@ -23,7 +23,7 @@ export default {
         title: this.todo,
         completed: false,
       }
-      this.$store.commit('addTodo', todo)
+      this.todo.trim() && this.$store.commit('addTodo', todo)
       this.todo = ''
     },
   },
