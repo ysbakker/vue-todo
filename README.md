@@ -1,24 +1,10 @@
 # vue-todo
 
-## Project setup
-```
-yarn install
-```
+This is a revolutionary TODO application built in Vue. Here are its features:
+- Creating TODO items;
+- Marking TODO items as 'done';
+- *WIP: Marking TODO items as 'not done';*
+- A very contemporary, expandable and intuitive layout;
+- Incredibly fast load times.
 
-### Compiles and hot-reloads for development
-```
-yarn serve
-```
-
-### Compiles and minifies for production
-```
-yarn build
-```
-
-### Lints and fixes files
-```
-yarn lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+**Warning**: this application might ruin all other TODO applications for you.
