@@ -1,17 +1,19 @@
 <template>
-  <li
-    :class="{ completed: item.completed }"
-    @click="$store.commit('toggleTodo', item.id)"
-  >
+  <li :class="{ completed: item.completed }" @click="toggleTodo(item.id)">
     <input type="checkbox" :checked="item.completed" />
     <p>{{ item.title }}</p>
   </li>
 </template>
 
 <script>
+import { mapMutations } from 'vuex'
+
 export default {
   name: 'Todo',
   props: ['item'],
+  methods: {
+    ...mapMutations(['toggleTodo']),
+  },
 }
 </script>
 
